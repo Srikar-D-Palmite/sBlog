@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Login
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 style="text-align: center;">Login</h1><br>
+    <form action="login" method="post" style="text-align: center;">
+        {% if error %}
+            <p style="color:red;">
+                Error: {{ error }}
+            </p>
+        {% endif %}
+        {% csrf_token %}
+        <p><input type="username" placeholder="Username" name="username" maxlength="20" required></p>
+        <p><input type="password" placeholder="Password" name="password" maxlength="20" required></p>
+        Don't have an account? Register <a href="/register" class="standard_link">here</a>.
+        <br><br>
+        <button type="submit" class="btn standard_button" style="color: white;">Submit</button>
+    </form>
+    <br>
+    
+{% endblock %}

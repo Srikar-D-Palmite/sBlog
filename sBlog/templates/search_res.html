@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Search
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 style="text-align: center;">Search results:</h1>
+    <br>
+    <table class="table table-hover table-bordered">
+        {% for post in matches %}
+            <tr>
+                <td style="border: none; padding-top: 20px; padding-left: 20px; padding-bottom: 20px;">
+                    <a href="/view/{{ post.id }}" class="standard_link">{{ post.title }}</a>
+                    <br><br>
+                    <span style="color: gray">{{ post.content|truncatewords:10 }}</span>
+                </td>
+                <td style="text-align: right; border: none; padding-top: 20px; padding-right: 20px; padding-bottom: 20px;">
+                    <span style="color: gray"><i>Last Modified: </i>
+                    {{ post.modified_date }}
+                    <br>
+                    <i>Written by: </i>
+                    {{ post.poster.username }}</span>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

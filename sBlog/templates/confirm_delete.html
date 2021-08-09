@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Delete
+{% endblock %}
+
+{% block body %}
+<br>
+<h1 style="text-align: center;">Delete Post</h1>
+<br>
+<p style="text-align: center;">Are you sure you want to delete this post?</p>
+<p style="text-align: center;"><b>{{ post.title }}</b></p>
+<br>
+<div style="text-align: center;">
+    <form  style="display: inline-block;" action="/delete/{{ post.id }}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger"">Yes</button>
+    </form>
+    &emsp;
+    <form  style="display: inline-block;" action="/view/{{ post.id }}" method="get">
+        <button type="submit" class="btn standard_button" style="color: white;">No</button>
+    </form>
+</div>
+{% endblock %}

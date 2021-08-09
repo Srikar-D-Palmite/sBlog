@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Comment
+{% endblock %}
+
+{% block body %}
+    <br>
+    <!-- <h2 style="text-align: center;">{{ post.title }}</h2>
+    <br> -->
+    <div style="margin-left: 5%; margin-right: 5%;">
+        <h3 style="text-align: left; color: #f2800d;"><b>{{ post.title }}</b></h3>
+        <table style="border: none; width: 100%;"><tr>
+            <td><i>Written by:</i> {{ post.poster.username }}</td>
+            <td><div style="text-align: right;"><i>Date:</i> {{ post.date }}</div></td>
+        </tr></table>
+        <br><br>
+        {{ post.content|linebreaks }}
+        <br><br>
+    </div>
+    <hr style="color: #f2800d;">
+    <div style="margin: 5%;">
+        <h2 style="text-align: center;">Create your comment here:</h2>
+        <br>
+        <form action="/comment/{{ post.id }}" method="post" style="text-align: center;">
+            {% csrf_token %}
+            <p><input type="text" placeholder="Title" name="title" maxlength="100" required></p>
+            <p><textarea rows="15" cols="80" placeholder="Comment content..." name="content" max_length="5000" required></textarea></p>
+            <button type="submit" class="btn btn-primary standard_button">Post comment</button>
+        </form>
+    </div>
+{% endblock %}

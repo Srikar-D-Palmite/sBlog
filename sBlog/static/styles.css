@@ -1,0 +1,56 @@
+/**
+ * site theme blue color: #004f99 
+ * orange color: #f2800d
+ * alert color: #ff8b17c0
+ */
+
+input:focus
+{
+    outline: none;
+    border-color: #f2800d;
+    box-shadow: 0 0 7px 0px #004f99;
+    /* h-offset v-offset blur spread color */
+}
+
+textarea:focus
+{
+    outline: none;
+    border-color: #f2800d;
+    box-shadow: 0 0 7px 0px #004f99;
+}
+
+.standard_button
+{
+    background-color: #004f99;
+}
+.standard_button:hover
+{
+    background-color: #f2800d;
+}
+
+table
+{
+    border: 1px solid black;
+}
+
+.standard_head
+{
+    text-align: center;
+}
+
+.standard_link
+{
+    text-decoration: none;
+    color: #004f99;
+}
+
+.standard_link:hover
+{
+    color: #f2800d !important;
+    text-decoration: underline;
+}
+
+hr
+{
+    color:#f2800d;
+}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - New Post
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 style="text-align: center;">Create a new blog post</h1>
+    <br>
+    <form action="new_post" method="post" style="text-align: center;">
+        {% csrf_token %}
+        <p><input type="text" placeholder="Title" name="title" maxlength="100" required></p>
+        <p><textarea rows="15" cols="80" placeholder="Content..." name="content" maxlength="20000" required></textarea></p>
+        <button type="submit" class="btn btn-primary standard_button">Post log!</button>
+    </form>
+{% endblock %}

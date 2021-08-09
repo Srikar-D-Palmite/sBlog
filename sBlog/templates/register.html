@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Register
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 style="text-align: center;">Register</h1><br>
+    <form action="register" method="post" style="text-align: center;">
+        <!-- class = "form-control" style="max-width: 10%; margin: auto;" -->
+        <!-- {% if messages %}
+            {% for messages in messages %}
+                {{ message.tags }}
+            {% endfor %}
+        {% endif %} -->
+        {% if error %}
+            <p style="color:red;">
+                Error: {{ error }}
+            </p>
+        {% endif %}
+        {% csrf_token %}
+        <p><input type="username" placeholder="Username" name="username" maxlength="20" required></p>
+        <p><input type="password" placeholder="Password" name="password" maxlength="20" required></p>
+        <p><input type="password" placeholder="Confirm Password" name="confirm password" required></p>
+        <button type="submit" class="btn standard_button" style="color: white;">Submit</button>
+    </form>
+{% endblock %}

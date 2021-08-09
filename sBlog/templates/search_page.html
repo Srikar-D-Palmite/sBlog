@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    sBlog - Search
+{% endblock %}
+
+{% block body %}
+    <br>
+    <h1 style="text-align: center;">Search</h1><br>
+    <form action="search" method="post" style="text-align: center;">
+        {% csrf_token %}
+        <p><input style="margin: auto; width: 50%;" type="search" placeholder="Search Query" name="query" maxlength="50" aria-label="Search" required></p>
+        <h5>Search within:</h5>
+        <input name="search_in" type="radio" class="form-check-input" value="title_content" id="title_content" checked>
+        <label class="form-check-label" for="title_content">
+            Titles and Content
+        </label>
+        <br>
+        <input name="search_in" type="radio" class="form-check-input" value="usernames" id="usernames">
+        <label class="form-check-label" for="usernames">
+            Usernames
+        </label>
+        <br><br>
+        <button type="submit" class="btn standard_button" style="color: white;">Submit</button>
+    </form>
+    <br>
+    
+{% endblock %}
